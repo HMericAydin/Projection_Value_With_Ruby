@@ -1,0 +1,11 @@
+def z_disp(x1,z1,xf,zf)
+  alpha = Math.atan(z1/x1)
+  hipo = Math.sqrt(z1*z1+x1*x1)
+  beta_upper = hipo*hipo + xf*xf - zf*zf
+  beta_lower = 2*hipo*xf
+  beta = Math.acos(beta_upper/beta_lower)
+  sin_sigma = Math.sin(alpha)*Math.cos(beta) + Math.cos(alpha)*Math.sin(beta)
+  disp_z = xf*sin_sigma
+end
+
+puts "The displacement value of the z-axis is #{z_disp(30,30,40,40)} mm"
